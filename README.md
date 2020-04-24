@@ -5,6 +5,9 @@ You only need to define your theme in CSS
   
 See in action 👉 https://codepen.io/saadeghi/pen/OJypbNM
 
+![image](https://user-images.githubusercontent.com/7342023/80218042-e3c67e00-8655-11ea-94e8-925d0dcbfd57.gif)
+
+
 ## 👨‍💻 How to use ##  
   
 1️⃣ Copy JS from [theme-changer.js](/theme-changer.js)  
