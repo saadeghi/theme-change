@@ -32,12 +32,14 @@ body {
 ```
 3. Use one of these elements to change the theme:  
       ### Toggle ###  
-      Clicking on this button, toggles between `default` and `dark` theme
+      Clicking on this button, toggles between the default theme and `dark` theme  
+      
       ```
       <button data-toggle-theme="dark"></button>
       ```
       ### Buttons ###  
-      Clicking on these buttons, sets the chosen theme and also sets the `ACTIVECLASS` for the chosen button
+      Clicking on these buttons, sets the chosen theme and also sets the `ACTIVECLASS` for the chosen button  
+      
       ```
       <button data-act-class="ACTIVECLASS" data-set-theme="">Default</button>
       <button data-act-class="ACTIVECLASS" data-set-theme="dark">Dark</button>
@@ -45,6 +47,7 @@ body {
       ```
       ### Select ###  
       simply choose the theme  
+      
       ```
       <select data-choose-theme>
         <option value="">Default</option>
