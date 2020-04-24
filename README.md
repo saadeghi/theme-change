@@ -1,4 +1,7 @@
-# 🎨 CSS Theme Changer
+# 🎨 CSS Theme Changer  
+
+Only 2KB minified (400 bytes GZipped)
+
 Change CSS theme with toggle, buttons or select using CSS Variables ([CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*)) and [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage).  
 It saves the chosen theme in brower localStorage and loads it again when page loads.  
 You only need to define your theme in CSS  
