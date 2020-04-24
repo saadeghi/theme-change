@@ -13,6 +13,7 @@ See in action 👉 https://codepen.io/saadeghi/pen/OJypbNM
 ```
 :root {
   --color-default: #fff;
+  /* or any other variables */
 }
 [data-theme='dark'] {
   --color-default: #252b30;
@@ -29,6 +30,7 @@ See in action 👉 https://codepen.io/saadeghi/pen/OJypbNM
 [data-theme='🐤'] {
   --color-default: #ffd65a;
 }
+/* and use your variables on any element */
 body {
   background-color: var(--color-default);
 }
