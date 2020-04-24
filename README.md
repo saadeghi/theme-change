@@ -1,7 +1,8 @@
 # 🎨 CSS Theme Changer
 Change CSS theme with toggle, buttons or select using CSS Variables ([CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*)) and [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage).  
 It saves the chosen theme in brower localStorage and loads it again when page loads.  
-You only need to define your theme in CSS. 
+You only need to define your theme in CSS  
+  
 See in action 👉 https://codepen.io/saadeghi/pen/OJypbNM
 
 ## 👨‍💻 How to use ##
@@ -31,14 +32,14 @@ body {
 }
 ```
 
-Use one of these elements to change the theme:  
-  ### Toggle ###  
+3️⃣ Use one of these elements to change the theme:  
+  ### ✅ Toggle ###  
   Clicking on this button, toggles between the default theme and `dark` theme  
   ```
   <button data-toggle-theme="dark"></button>
   ```
 
-  ### Buttons ###  
+  ### ✅ Buttons ###  
   Clicking on these buttons, sets the chosen theme and also sets the `ACTIVECLASS` for the chosen button  
 
   ```
@@ -47,7 +48,7 @@ Use one of these elements to change the theme:
   <button data-act-class="ACTIVECLASS" data-set-theme="black">Black</button>
   ```
 
-  ### Select ###  
+  ### ✅ Select ###  
   simply choose the theme  
 
   ```
