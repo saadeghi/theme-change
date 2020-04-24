@@ -47,9 +47,9 @@ body {
 3️⃣ Use one of these data attributes to change the theme 👇👇  
   ### ✅ Toggle ###  
   Using `data-toggle-theme`  
-  Clicking on this button, toggles between the default theme and `dark` theme  
+  Clicking on this button, toggles between the default theme and `dark` theme and applies the `ACTIVECLASS` when `dark` theme is active    
   ```
-  <button data-toggle-theme="dark"></button>
+  <button data-act-class="ACTIVECLASS" data-toggle-theme="dark"></button>
   ```
 
   ### ✅ Buttons ###  
