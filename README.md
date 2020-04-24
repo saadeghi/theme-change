@@ -5,8 +5,10 @@ You only need to define your theme in CSS
   
 See in action 👉 https://codepen.io/saadeghi/pen/OJypbNM
 
-## 👨‍💻 How to use ##
+## 👨‍💻 How to use ##  
+  
 1️⃣ Copy JS from [theme-changer.js](/theme-changer.js)  
+  
 2️⃣ Set your themeable style as custom properties in CSS like this:  
 ```
 :root {
@@ -32,7 +34,9 @@ body {
 }
 ```
 
-3️⃣ Use one of these elements to change the theme:  
+  
+  
+3️⃣ Use one of these elements to change the theme 👇👇  
   ### ✅ Toggle ###  
   Clicking on this button, toggles between the default theme and `dark` theme  
   ```
