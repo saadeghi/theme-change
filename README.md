@@ -7,6 +7,7 @@ It saves the chosen theme in brower localStorage and loads it again when page lo
 You only need to define your theme in CSS  
   
 See in action 👉 https://codepen.io/saadeghi/pen/OJypbNM
+Sample Site 👉 https://css-theme-changer.netlify.app/
 
 ![image](https://user-images.githubusercontent.com/7342023/80218042-e3c67e00-8655-11ea-94e8-925d0dcbfd57.gif)
 
