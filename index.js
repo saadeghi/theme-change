@@ -70,9 +70,14 @@ function themeSelect() {
     });
   }
 }
-if(typeof exports == "undefined"){
+if (typeof exports != "undefined") {
+  module.exports = {
+    themeToggle,
+    themeBtn,
+    themeSelect,
+  }
+} else {
   themeBtn()
   themeToggle()
   themeSelect()
 }
-export { themeToggle, themeBtn, themeSelect };
