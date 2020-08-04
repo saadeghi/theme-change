@@ -70,5 +70,9 @@ function themeSelect() {
     });
   }
 }
-
+if(typeof exports == "undefined"){
+  themeBtn()
+  themeToggle()
+  themeSelect()
+}
 export { themeToggle, themeBtn, themeSelect };
