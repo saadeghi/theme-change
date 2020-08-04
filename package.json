@@ -1,8 +1,9 @@
 {
   "name": "theme-change",
-  "version": "1.0.4",
+  "version": "1.0.45",
   "description": "Change CSS theme with toggle, buttons or select using CSS Variables and localStorage",
   "main": "index",
+  "typings": "index",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/saadeghi/theme-change.git"
