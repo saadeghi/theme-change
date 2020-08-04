@@ -1,5 +1,6 @@
 # 🎨 CSS Theme Changer  
 
+Easy, small, fast and scalable solution for CSS theming  
 Only 2KB minified (400 bytes GZipped)
 
 Change CSS theme with toggle, buttons or select using CSS Variables ([CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*)) and [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage).  
