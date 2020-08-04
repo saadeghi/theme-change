@@ -14,9 +14,21 @@ Sample Site 👉 https://css-theme-changer.netlify.app/
 
 ## 👨‍💻 How to use ##  
   
-1️⃣ Copy JS from [theme-changer.js](/theme-changer.js)  
-  
-2️⃣ Set your themeable style as custom properties in CSS like this:  
+1️⃣ JS:  
+Method 1 - Use CDN:
+```
+<script src="https://unpkg.com/theme-change"></script>
+```
+Method 2 - NPM:  
+Install: ` npm i theme-change --save` and import to your js file and call it:  
+```
+import {themeBtn, themeToggle, themeSelect} from "theme-change"
+themeBtn() // if you want to change theme with buttons
+themeToggle() // if you want to change theme with a toggle
+themeSelect() // if you want to change theme with a <select>
+```
+
+2️⃣ CSS: Set your themeable style as custom properties in CSS like this:  
 ```
 :root {
   --color-default: #fff;
@@ -25,17 +37,8 @@ Sample Site 👉 https://css-theme-changer.netlify.app/
 [data-theme='dark'] {
   --color-default: #252b30;
 }
-[data-theme='black'] {
-  --color-default: #000000;
-}
-[data-theme='🌸'] {
+[data-theme='pink'] {
   --color-default: #ffabc8;
-}
-[data-theme='🐬'] {
-  --color-default: #7ec6ff;
-}
-[data-theme='🐤'] {
-  --color-default: #ffd65a;
 }
 /* and use your variables on any element */
 body {
@@ -45,7 +48,7 @@ body {
 
   
   
-3️⃣ Use one of these data attributes to change the theme 👇👇  
+3️⃣ HTML: Use one of these data attributes to change the theme 👇  
   ### ✅ Toggle ###  
   Using `data-toggle-theme`  
   Clicking on this button, toggles between the default theme and `dark` theme and applies the `ACTIVECLASS` when `dark` theme is active    
@@ -60,7 +63,7 @@ body {
   ```
   <button data-act-class="ACTIVECLASS" data-set-theme="">Default</button>
   <button data-act-class="ACTIVECLASS" data-set-theme="dark">Dark</button>
-  <button data-act-class="ACTIVECLASS" data-set-theme="black">Black</button>
+  <button data-act-class="ACTIVECLASS" data-set-theme="pink">Black</button>
   ```
 
   ### ✅ Select ###  
@@ -71,6 +74,6 @@ body {
   <select data-choose-theme>
     <option value="">Default</option>
     <option value="dark">Dark</option>
-    <option value="black">Black</option>
+    <option value="pink">Pink</option>
   </select>
   ```
