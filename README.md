@@ -20,8 +20,8 @@ You only need to define your theme in CSS
 - You can use 3 methods:
   1. [Change theme with buttons](#1%EF%B8%8F⃣-change-theme-with-buttons)
   2. or [toggle between 2 themes](#2%EF%B8%8F⃣--toggle-between-2-themes)
-  3. or [using a select element to choose theme](#using-a-select-element-to-choose-theme)
-- Then you need to [define your theme in CSS](#3%EF%B8%8F⃣-using-a-select-to-choose-theme)
+  3. or [using a select element to choose theme](#3%EF%B8%8F⃣-using-a-select-to-choose-theme)
+- Then you need to [define your theme in CSS](#set-up-your-css)
 
 ---
 ### 1️⃣ Change theme with buttons
