@@ -40,7 +40,7 @@ Clicking on these buttons, sets the chosen theme and also adds the `ACTIVECLASS`
 ##### JS
 Use CDN
 ```
-<script src="https://unpkg.com/theme-change@latest/dist/btn.js"></script>
+<script src="https://unpkg.com/theme-change@latest/dist/btn.min.js"></script>
 ```
 Or use NPM:  
 Install: `npm i theme-change --save` and use it in your js file:  
@@ -62,7 +62,7 @@ Clicking on this element, toggles between the default theme and dark theme and a
 ##### JS
 Use CDN
 ```
-<script src="https://unpkg.com/theme-change@latest/dist/toggle.js"></script>
+<script src="https://unpkg.com/theme-change@latest/dist/toggle.min.js"></script>
 ```
 Or use NPM:  
 Install: `npm i theme-change --save` and use it in your js file:  
@@ -87,7 +87,7 @@ set theme when `<select>` changes
 ##### JS
 Use CDN
 ```
-<script src="https://unpkg.com/theme-change@latest/dist/select.js"></script>
+<script src="https://unpkg.com/theme-change@latest/dist/select.min.js"></script>
 ```
 Or use NPM:  
 Install: `npm i theme-change --save` and use it in your js file:  
