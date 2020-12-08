@@ -4,6 +4,9 @@
   "description": "Change CSS theme with toggle, buttons or select using CSS Variables and localStorage",
   "main": "index",
   "typings": "index",
+  "files": [
+    "index.js"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/saadeghi/theme-change.git"
