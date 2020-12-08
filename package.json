@@ -1,12 +1,11 @@
 {
   "name": "theme-change",
-  "version": "1.0.56",
+  "version": "1.0.57",
   "description": "Change CSS theme with toggle, buttons or select using CSS Variables and localStorage",
   "main": "dist/index.js",
   "typings": "dist/index.js",
   "files": [
-    "dist",
-    "index.js"
+    "dist"
   ],
   "repository": {
     "type": "git",
