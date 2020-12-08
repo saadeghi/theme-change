@@ -126,7 +126,7 @@ You can also define a default theme when user is using a dark theme on their OS
 }
 ```
 ##### Fixing PurgeCSS issue
-⚠️ If you're using [Purge CSS](https://purgecss.com/), you might need to [sefe list](https://purgecss.com/safelisting.html#in-the-css-directly) your CSS using the comments below because your secondary themes will be purged
+⚠️ If you're using [Purge CSS](https://purgecss.com/), you might need to [safe list](https://purgecss.com/safelisting.html#in-the-css-directly) your CSS using the comments below because your secondary themes will be purged
 ```
 /*! purgecss start ignore */
 
