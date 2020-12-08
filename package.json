@@ -1,6 +1,6 @@
 {
   "name": "theme-change",
-  "version": "1.0.52",
+  "version": "1.0.53",
   "description": "Change CSS theme with toggle, buttons or select using CSS Variables and localStorage",
   "main": "index",
   "typings": "index",
