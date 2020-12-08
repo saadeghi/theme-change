@@ -17,6 +17,11 @@ jobs:
         with:
             node-version: 12
             registry-url: https://registry.npmjs.org
+      - id: check
+        uses: EndBug/version-check@v1
+        with:
+            file-url: https://unpkg.com/theme-change@latest/package.json
+            static-checking: localIsNew
       - run: npm install
       - name: build
         run: npm run build
@@ -24,5 +29,6 @@ jobs:
         run: npm run min
       - name: publish
         run: npm publish
+        if: steps.check.outputs.changed == 'true'
         env:
             NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
