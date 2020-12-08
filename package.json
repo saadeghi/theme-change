@@ -1,6 +1,6 @@
 {
   "name": "theme-change",
-  "version": "1.0.55",
+  "version": "1.0.56",
   "description": "Change CSS theme with toggle, buttons or select using CSS Variables and localStorage",
   "main": "dist/index.js",
   "typings": "dist/index.js",
@@ -18,7 +18,7 @@
     "url": "https://github.com/saadeghi/theme-change/issues"
   },
   "homepage": "https://github.com/saadeghi/theme-change#readme",
-  "devDependencies": {
+  "dependencies": {
     "concat": "^1.0.3"
   },
   "scripts": {
