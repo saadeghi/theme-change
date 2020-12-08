@@ -12,19 +12,22 @@ You only need to define your theme in CSS
 - See example code on [codepen](https://codepen.io/saadeghi/pen/OJypbNM)
 - See Sample site on [Netlify](https://css-theme-changer.netlify.app/)
 
-![image](https://user-images.githubusercontent.com/7342023/80218042-e3c67e00-8655-11ea-94e8-925d0dcbfd57.gif)
+[![image](https://user-images.githubusercontent.com/7342023/80218042-e3c67e00-8655-11ea-94e8-925d0dcbfd57.gif)](#)
 
 
 ## 👨‍💻 How to use ##  
 
 - You can use 3 methods:
-  1. [Change theme with buttons](#change-theme-with-buttons)
-  2. or [toggle between 2 themes](#toggle-between-2-themes)
+  1. [Change theme with buttons](#1%EF%B8%8F⃣-change-theme-with-buttons)
+  2. or [toggle between 2 themes](#2%EF%B8%8F⃣--toggle-between-2-themes)
   3. or [using a select element to choose theme](#using-a-select-element-to-choose-theme)
-- Then you need to [define your theme in CSS](#set-up-your-CSS)
+- Then you need to [define your theme in CSS](#3%EF%B8%8F⃣-using-a-select-to-choose-theme)
 
 ---
 ### 1️⃣ Change theme with buttons
+[![btn](https://user-images.githubusercontent.com/7342023/101527827-c0adcc00-39a3-11eb-9e41-24bfa91ea96c.gif)](#)
+
+
 Using `data-set-theme`
 Clicking on these buttons, sets the chosen theme and also adds the `ACTIVECLASS` to the chosen button
 
@@ -47,6 +50,8 @@ themeBtn()
 ```
 
 ### 2️⃣  Toggle between 2 themes
+[![toggle](https://user-images.githubusercontent.com/7342023/101527821-bf7c9f00-39a3-11eb-822b-7751265a18a5.gif)](#)
+
 Using `data-toggle-theme`
 Clicking on this element, toggles between the default theme and dark theme and applies the ACTIVECLASS when dark theme is active
 
@@ -67,6 +72,8 @@ themeToggle()
 ```
 
 ### 3️⃣ Using a `<select>` to choose theme
+[![select](https://user-images.githubusercontent.com/7342023/101527790-b4297380-39a3-11eb-9173-bc909549d160.gif)](#)
+
 Using `data-choose-theme`
 set theme when `<select>` changes
 ##### HTML
