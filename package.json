@@ -1,6 +1,6 @@
 {
   "name": "theme-change",
-  "version": "1.0.60",
+  "version": "1.0.61",
   "description": "Change CSS theme with toggle, buttons or select using CSS Variables and localStorage",
   "main": "dist/index.js",
   "typings": "dist/index.js",
@@ -25,7 +25,7 @@
   "scripts": {
     "makedir:dist": "mkdirp dist",
     "build:btn": "concat -o dist/btn.js src/btn.js src/exportBtn.js",
-    "build:toggle": "concat -o dist/toggle.js src/btn.js src/exportToggle.js",
+    "build:toggle": "concat -o dist/toggle.js src/toggle.js src/exportToggle.js",
     "build:select": "concat -o dist/select.js src/select.js src/exportSelect.js",
     "build:all": "concat -o dist/index.js src/toggle.js src/btn.js src/select.js src/exportAll.js",
     "build": "npm run makedir:dist && npm run build:btn && npm run build:toggle && npm run build:select && npm run build:all",
