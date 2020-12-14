@@ -144,7 +144,7 @@ You can also define a default theme when user is using a dark theme on their OS
 [js]: https://badgen.net/badgesize/normal/https/unpkg.com/theme-change/dist/index.min.js?label=file%20size&color=purple
 [npm]: https://badgen.net/npm/v/theme-change?label=version&icon=npm&color=purple
 [dl]: https://badgen.net/npm/dt/theme-change?icon=npm&color=purple
-[commit]: https://badgen.net/github/last-commit/saadeghi/theme-chamge?icon=github&color=purple
+[commit]: https://badgen.net/github/last-commit/saadeghi/theme-change?icon=github&color=purple
 
 [install-size-url]: https://packagephobia.com/result?p=theme-change
 [js-url]: https://unpkg.com/theme-change@latest/dist/index.min.js
