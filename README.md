@@ -1,7 +1,9 @@
 # 🎨 CSS Theme Changer  
 
-![image](https://img.shields.io/github/package-json/v/saadeghi/theme-change)
-![image](https://img.shields.io/bundlephobia/minzip/theme-change)
+
+[![][install-size]][install-size-url] [![][js]][js-url]  
+[![][npm]][npm-url] [![][dl]][npm-url] [![][commit]][gh-url]  
+
 
 A very very small script to handle CSS theming  
 
@@ -138,3 +140,13 @@ You can also define a default theme when user is using a dark theme on their OS
 ```
 
 ---
+[install-size]: https://badgen.net/packagephobia/publish/theme-change?label=package%20install%20size&icon=npm&color=purple
+[js]: https://badgen.net/badgesize/normal/https/unpkg.com/theme-change/dist/index.min.js?label=file%20size&color=purple
+[npm]: https://badgen.net/npm/v/theme-change?label=version&icon=npm&color=purple
+[dl]: https://badgen.net/npm/dt/theme-change?icon=npm&color=purple
+[commit]: https://badgen.net/github/last-commit/saadeghi/theme-chamge?icon=github&color=purple
+
+[install-size-url]: https://packagephobia.com/result?p=theme-change
+[js-url]: https://unpkg.com/theme-change@latest/dist/index.min.js
+[npm-url]: https://www.npmjs.com/package/theme-change
+[gh-url]: https://github.com/saadeghi/theme-change
