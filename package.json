@@ -1,6 +1,6 @@
 {
   "name": "theme-change",
-  "version": "1.0.64",
+  "version": "1.0.65",
   "description": "Change CSS theme with toggle, buttons or select using CSS Variables and localStorage",
   "main": "dist/index.js",
   "typings": "dist/index.js",
@@ -18,15 +18,14 @@
   },
   "homepage": "https://github.com/saadeghi/theme-change#readme",
   "devDependencies": {
-    "mkdirp": "^1.0.4",
     "uglify-es": "^3.3.9"
   },
   "scripts": {
-    "makedir:dist": "mkdirp dist",
     "build:btn": "uglifyjs src/btn.js src/exportBtn.js -o dist/btn.js",
     "build:toggle": "uglifyjs src/toggle.js src/exportToggle.js -o dist/toggle.js",
     "build:select": "uglifyjs src/select.js src/exportSelect.js -o dist/select.js",
     "build:index": "uglifyjs src/toggle.js src/btn.js src/select.js src/exportAll.js -o dist/index.js",
     "build": "npm run build:btn && npm run build:toggle && npm run build:select && npm run build:index"
-  }
+  },
+  "dependencies": {}
 }
