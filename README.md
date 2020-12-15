@@ -1,22 +1,21 @@
-# 🎨 CSS Theme Changer  
-
-
-[![][install-size]][install-size-url] [![][js]][js-url]  
-[![][npm]][npm-url] [![][dl]][npm-url] [![][commit]][gh-url]  
-
+# 🎨 CSS Theme Change 
 A very very small script to handle CSS theming  
+
+[![][build]][build-url] [![][install-size]][install-size-url] [![][js]][js-url]  
+[![][npm]][npm-url] [![][dl]][npm-url] [![][commit]][gh-url]  
 
 > Change CSS theme with toggle, buttons or select using CSS Variables ([CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*)) and [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage).  
 It saves the chosen theme in brower localStorage and loads it again when page loads.  
 You only need to define your theme in CSS  
   
+# Demo  
 - See example code on [codepen](https://codepen.io/saadeghi/pen/OJypbNM)
 - See Sample site on [Netlify](https://css-theme-changer.netlify.app/)
 
 [![image](https://user-images.githubusercontent.com/7342023/80218042-e3c67e00-8655-11ea-94e8-925d0dcbfd57.gif)](#)
 
 
-## 👨‍💻 How to use ##  
+# 👨‍💻 Use  
 
 - You can use 3 methods:
   1. [Change theme with buttons](#1%EF%B8%8F⃣-change-theme-with-buttons)
@@ -25,23 +24,23 @@ You only need to define your theme in CSS
 - Then you need to [define your theme in CSS](#set-up-your-css)
 
 ---
-### 1️⃣ Change theme with buttons
+## 1️⃣ Change theme with buttons
 [![btn](https://user-images.githubusercontent.com/7342023/101527827-c0adcc00-39a3-11eb-9e41-24bfa91ea96c.gif)](#)
 
 
 Using `data-set-theme`
 Clicking on these buttons, sets the chosen theme and also adds the `ACTIVECLASS` to the chosen button
 
-##### HTML
+### HTML
 ```
 <button data-act-class="ACTIVECLASS" data-toggle-theme=""></button>
 <button data-act-class="ACTIVECLASS" data-toggle-theme="dark"></button>
 <button data-act-class="ACTIVECLASS" data-toggle-theme="pink"></button>
 ```
-##### JS [![][btn-js]][btn-js-url] 
-Use CDN
+### JS 
+Use CDN [![][btn-js]][btn-js-url]  
 ```
-<script src="https://unpkg.com/theme-change@latest/dist/btn.min.js"></script>
+<script src="https://unpkg.com/theme-change@latest/dist/btn.js"></script>
 ```
 Or use NPM:  
 Install: `npm i theme-change --save` and use it in your js file:  
@@ -50,20 +49,20 @@ import {themeBtn} from "theme-change"
 themeBtn()
 ```
 
-### 2️⃣  Toggle between 2 themes 
+## 2️⃣  Toggle between 2 themes 
 [![toggle](https://user-images.githubusercontent.com/7342023/101527821-bf7c9f00-39a3-11eb-822b-7751265a18a5.gif)](#)
 
 Using `data-toggle-theme`
 Clicking on this element, toggles between the default theme and dark theme and applies the ACTIVECLASS when dark theme is active
 
-##### HTML
+### HTML
 ```
 <button data-act-class="ACTIVECLASS" data-toggle-theme="dark"></button>
 ```
-##### JS [![][toggle-js]][toggle-js-url]
-Use CDN
+### JS 
+Use CDN [![][toggle-js]][toggle-js-url]  
 ```
-<script src="https://unpkg.com/theme-change@latest/dist/toggle.min.js"></script>
+<script src="https://unpkg.com/theme-change@latest/dist/toggle.js"></script>
 ```
 Or use NPM:  
 Install: `npm i theme-change --save` and use it in your js file:  
@@ -72,12 +71,12 @@ import {themeToggle} from "theme-change"
 themeToggle()
 ```
 
-### 3️⃣ Using a `<select>` to choose theme 
+## 3️⃣ Using a `<select>` to choose theme 
 [![select](https://user-images.githubusercontent.com/7342023/101527790-b4297380-39a3-11eb-9173-bc909549d160.gif)](#)
 
 Using `data-choose-theme`
 set theme when `<select>` changes
-##### HTML
+### HTML
 ```
 <select data-choose-theme>
   <option value="">Default</option>
@@ -85,10 +84,10 @@ set theme when `<select>` changes
   <option value="pink">Pink</option>
 </select>
 ```
-##### JS [![][select-js]][select-js-url]
-Use CDN
+### JS 
+Use CDN [![][select-js]][select-js-url]  
 ```
-<script src="https://unpkg.com/theme-change@latest/dist/select.min.js"></script>
+<script src="https://unpkg.com/theme-change@latest/dist/select.js"></script>
 ```
 Or use NPM:  
 Install: `npm i theme-change --save` and use it in your js file:  
@@ -140,18 +139,20 @@ You can also define a default theme when user is using a dark theme on their OS
 
 ---
 [install-size]: https://badgen.net/packagephobia/publish/theme-change?label=package%20install%20size&icon=npm&color=purple
-[js]: https://badgen.net/badgesize/normal/https/unpkg.com/theme-change/dist/index.min.js?label=file%20size&color=purple
-[btn-js]: https://badgen.net/badgesize/normal/https/unpkg.com/theme-change/dist/btn.min.js?label=size&color=purple
-[toggle-js]: https://badgen.net/badgesize/normal/https/unpkg.com/theme-change/dist/toggle.min.js?label=size&color=purple
-[select-js]: https://badgen.net/badgesize/normal/https/unpkg.com/theme-change/dist/select.min.js?label=size&color=purple
-[npm]: https://badgen.net/npm/v/theme-change?label=version&icon=npm&color=purple
+[js]: https://badgen.net/badgesize/normal/https/unpkg.com/theme-change/dist/index.js?label=file%20size&color=purple
+[btn-js]: https://badgen.net/badgesize/normal/https/unpkg.com/theme-change/dist/btn.js?label=size&color=purple&scale=0.8
+[toggle-js]: https://badgen.net/badgesize/normal/https/unpkg.com/theme-change/dist/toggle.js?label=size&color=purple&scale=0.8
+[select-js]: https://badgen.net/badgesize/normal/https/unpkg.com/theme-change/dist/select.js?label=size&color=purple&scale=0.8
+[npm]: https://badgen.net/npm/v/theme-change?label=version&color=purple
 [dl]: https://badgen.net/npm/dt/theme-change?icon=npm&color=purple
 [commit]: https://badgen.net/github/last-commit/saadeghi/theme-change?icon=github&color=purple
+[build]: https://badgen.net/github/checks/saadeghi/theme-change?label=build
 
+[build-url]: https://github.com/saadeghi/theme-change/actions
 [install-size-url]: https://packagephobia.com/result?p=theme-change
-[js-url]: https://unpkg.com/theme-change@latest/dist/index.min.js
-[btn-js-url]: https://unpkg.com/theme-change@latest/dist/btn.min.js
-[toggle-js-url]: https://unpkg.com/theme-change@latest/dist/toggle.min.js
-[select-js-url]: https://unpkg.com/theme-change@latest/dist/select.min.js
+[js-url]: https://unpkg.com/theme-change@latest/dist/index.js
+[btn-js-url]: https://unpkg.com/theme-change@latest/dist/btn.js
+[toggle-js-url]: https://unpkg.com/theme-change@latest/dist/toggle.js
+[select-js-url]: https://unpkg.com/theme-change@latest/dist/select.js
 [npm-url]: https://www.npmjs.com/package/theme-change
 [gh-url]: https://github.com/saadeghi/theme-change

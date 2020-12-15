@@ -1,6 +1,6 @@
 {
   "name": "theme-change",
-  "version": "1.0.62",
+  "version": "1.0.63",
   "description": "Change CSS theme with toggle, buttons or select using CSS Variables and localStorage",
   "main": "dist/index.js",
   "typings": "dist/index.js",
@@ -18,17 +18,15 @@
   },
   "homepage": "https://github.com/saadeghi/theme-change#readme",
   "devDependencies": {
-    "concat": "^1.0.3",
-    "minify": "^6.0.1",
-    "mkdirp": "^1.0.4"
+    "mkdirp": "^1.0.4",
+    "uglify-es": "^3.3.9"
   },
   "scripts": {
     "makedir:dist": "mkdirp dist",
-    "build:btn": "concat -o dist/btn.js src/btn.js src/exportBtn.js",
-    "build:toggle": "concat -o dist/toggle.js src/toggle.js src/exportToggle.js",
-    "build:select": "concat -o dist/select.js src/select.js src/exportSelect.js",
-    "build:all": "concat -o dist/index.js src/toggle.js src/btn.js src/select.js src/exportAll.js",
-    "build": "npm run makedir:dist && npm run build:btn && npm run build:toggle && npm run build:select && npm run build:all",
-    "min": "minify dist/btn.js > dist/btn.min.js && minify dist/select.js > dist/select.min.js && minify dist/toggle.js > dist/toggle.min.js && minify dist/index.js > dist/index.min.js"
+    "build:btn": "uglifyjs src/btn.js src/exportBtn.js -o dist/btn.js",
+    "build:toggle": "uglifyjs src/toggle.js src/exportToggle.js -o dist/toggle.js",
+    "build:select": "uglifyjs src/select.js src/exportSelect.js -o dist/select.js",
+    "build:index": "uglifyjs src/toggle.js src/btn.js src/select.js src/exportAll.js -o dist/index.js",
+    "build": "npm run build:btn && npm run build:toggle && npm run build:select && npm run build:index"
   }
 }
