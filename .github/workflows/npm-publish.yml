@@ -23,6 +23,8 @@ jobs:
             file-url: https://unpkg.com/theme-change@latest/package.json
             static-checking: localIsNew
       - run: npm install
+      - name: mkdir
+        run: mkdir dist
       - name: build
         run: npm run build
       - name: publish
