@@ -2,6 +2,12 @@
   "name": "theme-change",
   "version": "1.0.65",
   "description": "Change CSS theme with toggle, buttons or select using CSS Variables and localStorage",
+  "keywords": [
+    "javascript",
+    "theming",
+    "theme",
+    "css"
+  ],
   "main": "dist/index.js",
   "typings": "dist/index.js",
   "files": [
