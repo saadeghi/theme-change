@@ -33,9 +33,9 @@ Clicking on these buttons, sets the chosen theme and also adds the `ACTIVECLASS`
 
 ### HTML
 ```
-<button data-act-class="ACTIVECLASS" data-toggle-theme=""></button>
-<button data-act-class="ACTIVECLASS" data-toggle-theme="dark"></button>
-<button data-act-class="ACTIVECLASS" data-toggle-theme="pink"></button>
+<button data-act-class="ACTIVECLASS" data-set-theme=""></button>
+<button data-act-class="ACTIVECLASS" data-set-theme="dark"></button>
+<button data-act-class="ACTIVECLASS" data-set-theme="pink"></button>
 ```
 ### JS 
 Use CDN [![][btn-js]][btn-js-url]  
