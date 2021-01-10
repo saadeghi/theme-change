@@ -17,8 +17,8 @@
     "type": "git",
     "url": "git+https://github.com/saadeghi/theme-change.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Pouya Saadeghi",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/saadeghi/theme-change/issues"
   },
