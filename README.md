@@ -53,11 +53,11 @@ themeBtn()
 [![toggle](https://user-images.githubusercontent.com/7342023/101527821-bf7c9f00-39a3-11eb-822b-7751265a18a5.gif)](#)
 
 Using `data-toggle-theme`
-Clicking on this element, toggles between the default theme and dark theme and applies the ACTIVECLASS when dark theme is active
+Clicking on this element, toggles between the 2 values and applies the ACTIVECLASS when dark theme is active
 
 ### HTML
 ```
-<button data-act-class="ACTIVECLASS" data-toggle-theme="dark"></button>
+<button data-act-class="ACTIVECLASS" data-toggle-theme="dark,light"></button>
 ```
 ### JS 
 Use CDN [![][toggle-js]][toggle-js-url]  
