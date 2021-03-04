@@ -5,14 +5,21 @@ function themeSelect() {
         document.documentElement.setAttribute("data-theme", theme);
         var optionToggler = document.querySelector("select[data-choose-theme] [value='" + theme.toString() + "']");
         if (optionToggler) {
-          optionToggler.selected = true;
+          [...document.querySelectorAll("select[data-choose-theme] [value='" + theme.toString() + "']")].forEach((el) => {
+            el.selected = true;
+          });
         }
       }
     })();
     if (document.querySelector('select[data-choose-theme]')) {
-      document.querySelector('select[data-choose-theme]').addEventListener('change', function () {
-        document.documentElement.setAttribute("data-theme", this.value);
-        localStorage.setItem("theme", document.documentElement.getAttribute('data-theme'));
+      [...document.querySelectorAll("select[data-choose-theme]")].forEach((el) => {
+        el.addEventListener('change', function () {
+          document.documentElement.setAttribute("data-theme", this.value);
+          localStorage.setItem("theme", document.documentElement.getAttribute('data-theme'));
+          [...document.querySelectorAll("select[data-choose-theme] [value='" + localStorage.getItem("theme") + "']")].forEach((el) => {
+            el.selected = true;
+          });
+        });
       });
     }
   });
