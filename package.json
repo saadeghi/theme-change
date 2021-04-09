@@ -1,6 +1,6 @@
 {
   "name": "theme-change",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "Change CSS theme with toggle, buttons or select using CSS Variables and localStorage",
   "keywords": [
     "javascript",
@@ -8,10 +8,13 @@
     "theme",
     "css"
   ],
-  "main": "dist/index.js",
-  "typings": "dist/index.js",
+  "main": "index.js",
+  "typings": "index.js",
   "files": [
-    "dist"
+    "index.js",
+    "toggle.js",
+    "select.js",
+    "btn.js"
   ],
   "repository": {
     "type": "git",
@@ -27,10 +30,10 @@
     "uglify-es": "^3.3.9"
   },
   "scripts": {
-    "build:btn": "uglifyjs src/btn.js src/exportBtn.js -o dist/btn.js",
-    "build:toggle": "uglifyjs src/toggle.js src/exportToggle.js -o dist/toggle.js",
-    "build:select": "uglifyjs src/select.js src/exportSelect.js -o dist/select.js",
-    "build:index": "uglifyjs src/toggle.js src/btn.js src/select.js src/exportAll.js -o dist/index.js",
+    "build:btn": "uglifyjs src/btn.js src/callBtn.js src/export.js -o btn.js",
+    "build:toggle": "uglifyjs src/toggle.js src/callToggle.js src/export.js -o toggle.js",
+    "build:select": "uglifyjs src/select.js src/callSelect.js src/export.js -o select.js",
+    "build:index": "uglifyjs src/toggle.js src/btn.js src/select.js src/callAll.js src/export.js -o index.js",
     "build": "npm run build:btn && npm run build:toggle && npm run build:select && npm run build:index"
   },
   "dependencies": {}

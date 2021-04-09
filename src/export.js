@@ -1,7 +1,7 @@
 if (typeof exports != "undefined") {
   module.exports = {
-    themeToggle,
+    themeChange: themeChange
   }
 } else {
-  themeToggle()
+  themeChange()
 }
