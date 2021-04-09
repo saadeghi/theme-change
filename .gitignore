@@ -1,2 +1,5 @@
 node_modules
-dist
+index.js
+btn.js
+select.js
+toggle.js
