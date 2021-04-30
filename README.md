@@ -21,7 +21,7 @@
 
 Use CDN:
 ```
-<script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.1/index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
 ```
 <details>
 <summary>
