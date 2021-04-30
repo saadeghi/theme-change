@@ -1,20 +1,22 @@
 function themeBtn() {
   (function (theme = localStorage.getItem("theme")) {
-    if (localStorage.getItem("theme")) {
-      document.documentElement.setAttribute("data-theme", theme);
-      var btnEl = document.querySelector("[data-set-theme='" + theme.toString() + "']")
-      if (btnEl) {
-        [...document.querySelectorAll("[data-set-theme]")].forEach((el) => {
-          el.classList.remove(el.getAttribute('data-act-class'));
-        });
+    if (theme != undefined && theme != '') {
+      if (localStorage.getItem("theme") && localStorage.getItem("theme") != '') {
+        document.documentElement.setAttribute("data-theme", theme);
+        var btnEl = document.querySelector("[data-set-theme='" + theme.toString() + "']")
+        if (btnEl) {
+          [...document.querySelectorAll("[data-set-theme]")].forEach((el) => {
+            el.classList.remove(el.getAttribute('data-act-class'));
+          });
+          if (btnEl.getAttribute('data-act-class')) {
+            btnEl.classList.add(btnEl.getAttribute('data-act-class'))
+          }
+        }
+      } else {
+        var btnEl = document.querySelector("[data-set-theme='']")
         if (btnEl.getAttribute('data-act-class')) {
           btnEl.classList.add(btnEl.getAttribute('data-act-class'))
         }
-      }
-    } else {
-      var btnEl = document.querySelector("[data-set-theme='']")
-      if (btnEl.getAttribute('data-act-class')) {
-        btnEl.classList.add(btnEl.getAttribute('data-act-class'))
       }
     }
   })();
