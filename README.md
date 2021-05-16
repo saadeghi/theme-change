@@ -169,7 +169,7 @@ If you're using [Purge CSS](https://purgecss.com/), you might need to [safe list
 
 
 ---
-[install-size]: https://badgen.net/packagephobia/publish/theme-change?label=package%20install%20size&icon=npm&color=purple
+[install-size]: https://badgen.net/bundlephobia/minzip/theme-change?label=bundle%20size&color=purple
 [js]: https://badgen.net/badgesize/normal/https/unpkg.com/theme-change/index.js?label=file%20size&color=purple
 [npm]: https://badgen.net/npm/v/theme-change?label=version&color=purple
 [dl]: https://badgen.net/npm/dt/theme-change?icon=npm&color=purple
@@ -177,7 +177,7 @@ If you're using [Purge CSS](https://purgecss.com/), you might need to [safe list
 [build]: https://badgen.net/github/checks/saadeghi/theme-change?label=build
 
 [build-url]: https://github.com/saadeghi/theme-change/actions
-[install-size-url]: https://packagephobia.com/result?p=theme-change
+[install-size-url]: https://bundlephobia.com/result?p=theme-change
 [js-url]: https://unpkg.com/theme-change@latest/index.js
 [npm-url]: https://www.npmjs.com/package/theme-change
 [gh-url]: https://github.com/saadeghi/theme-change
