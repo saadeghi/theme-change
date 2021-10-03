@@ -52,6 +52,25 @@ Use CDN:
   ```
 
 </details>
+<details>
+<summary>
+  or if it's a Svelte project: 
+</summary>
+
+  Install: `npm i theme-change --save` and use it in your svelte component that uses one theme-change attributes:
+
+  ```js
+  import { onMount } from "svelte";
+  import { themeChange } from "theme-change";
+
+  // NOTE: the element that is using one of the theme attributes must be in the DOM on mount
+  onMount(() => {
+    themeChange(false);
+    // 👆 false parameter is required for svelte
+  });
+  ```
+
+</details>
 
 ## CSS
 
