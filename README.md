@@ -1,38 +1,41 @@
-# 🎨 CSS Theme Change 
+# 🎨 CSS Theme Change
 
-* A tiny JS script to handle CSS themes
-* Change CSS theme using `button`, `toggle` or a `<select>`
-* It saves chosen theme in browser and uses it again when page reloads
+- A tiny JS script to handle CSS themes
+- Change CSS theme using `button`, `toggle` or a `<select>`
+- It saves chosen theme in browser and uses it again when page reloads
 
 [![][build]][build-url] [![][install-size]][install-size-url] [![][js]][js-url]  
-[![][npm]][npm-url] [![][dl]][npm-url] [![][commit]][gh-url]  
+[![][npm]][npm-url] [![][dl]][npm-url] [![][commit]][gh-url]
 
-  
-# 🖥 Demo  
+# 🖥 Demo
+
 - See example code on [codepen](https://codepen.io/saadeghi/pen/OJypbNM)
 - See Sample site on [Netlify](https://css-theme-changer.netlify.app/)
+- See Vue Example on [Vercel](https://vue-3-theme.vercel.app)
 
 [![image](https://user-images.githubusercontent.com/7342023/80218042-e3c67e00-8655-11ea-94e8-925d0dcbfd57.gif)](#)
 
-
-# 💿 Use  
+# 💿 Use
 
 ## JS
 
 Use CDN:
+
 ```
 <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
 ```
+
 <details>
 <summary>
   Or use NPM: 
 </summary>
 
-  Install: `npm i theme-change --save` and use it in your js file:  
-  ```js
-  import {themeChange} from "theme-change"
-  themeChange()
-  ```
+Install: `npm i theme-change --save` and use it in your js file:
+
+```js
+import { themeChange } from 'theme-change'
+themeChange()
+```
 
 </details>
 <details>
@@ -40,16 +43,56 @@ Use CDN:
   or if it's a React project: 
 </summary>
 
-  Install: `npm i theme-change --save` and use it in your js file:  
-  ```js
-  import { useEffect } from 'react';
-  import {themeChange} from "theme-change"
+Install: `npm i theme-change --save` and use it in your js file:
 
-  useEffect(() => {
+```js
+import { useEffect } from 'react'
+import { themeChange } from 'theme-change'
+
+useEffect(() => {
+  themeChange(false)
+  // 👆 false parameter is required for react project
+}, [])
+```
+
+</details>
+<details>
+<summary>
+  or if it's a Vue 3 project: 
+</summary>
+
+Install: `npm i theme-change --save` and use it in your js file:
+
+```js
+import { onMounted, onUpdated, onUnmounted } from 'vue'
+import { themeChange } from 'theme-change'
+
+export default {
+  setup() {
+    onMounted(() => {
+      themeChange(false)
+    })
+  },
+}
+```
+
+</details>
+<details>
+<summary>
+  or if it's a Vue 2 project: 
+</summary>
+
+Install: `npm i theme-change --save` and use it in your js file:
+
+```js
+import { themeChange } from 'theme-change'
+
+export default {
+  mounted: function () {
     themeChange(false)
-    // 👆 false parameter is required for react project
-  }, []);
-  ```
+  },
+}
+```
 
 </details>
 <details>
@@ -57,24 +100,25 @@ Use CDN:
   or if it's a Svelte project: 
 </summary>
 
-  Install: `npm i theme-change --save` and use it in your svelte component that uses one theme-change attributes:
+Install: `npm i theme-change --save` and use it in your svelte component that uses one theme-change attributes:
 
-  ```js
-  import { onMount } from "svelte";
-  import { themeChange } from "theme-change";
+```js
+import { onMount } from 'svelte'
+import { themeChange } from 'theme-change'
 
-  // NOTE: the element that is using one of the theme attributes must be in the DOM on mount
-  onMount(() => {
-    themeChange(false);
-    // 👆 false parameter is required for svelte
-  });
-  ```
+// NOTE: the element that is using one of the theme attributes must be in the DOM on mount
+onMount(() => {
+  themeChange(false)
+  // 👆 false parameter is required for svelte
+})
+```
 
 </details>
 
 ## CSS
 
-Set your themeable style as custom properties in CSS like this:  
+Set your themeable style as custom properties in CSS like this:
+
 ```css
 :root {
   --my-color: #fff;
@@ -87,7 +131,9 @@ Set your themeable style as custom properties in CSS like this:
   --my-color: #ffabc8;
 }
 ```
+
 then use your variables on any element
+
 ```css
 body {
   background-color: var(--my-color);
@@ -95,7 +141,9 @@ body {
 ```
 
 ## HTML
+
 There are 3 options:
+
 - ### Using buttons to set a theme
 
   [![btn](https://user-images.githubusercontent.com/7342023/101527827-c0adcc00-39a3-11eb-9e41-24bfa91ea96c.gif)](#)
@@ -130,9 +178,6 @@ There are 3 options:
   </select>
   ```
 
-
-
-
 # Advance use
 
 <details>
@@ -161,18 +206,16 @@ If you're using [Purge CSS](https://purgecss.com/), you might need to [safe list
 
   ```js
   module.exports = {
-
     purge: {
       options: {
-        safelist: [
-          /data-theme$/,
-        ],
+        safelist: [/data-theme$/],
       },
     },
-
   }
   ```
+
 - Safelist inside CSS file
+
   ```css
   /*! purgecss start ignore */
 
@@ -185,16 +228,14 @@ If you're using [Purge CSS](https://purgecss.com/), you might need to [safe list
 
 </details>
 
-
-
 ---
+
 [install-size]: https://badgen.net/bundlephobia/minzip/theme-change?label=bundle%20size&color=purple
 [js]: https://badgen.net/badgesize/normal/https/unpkg.com/theme-change/index.js?label=file%20size&color=purple
 [npm]: https://badgen.net/npm/v/theme-change?label=version&color=purple
 [dl]: https://badgen.net/npm/dt/theme-change?icon=npm&color=purple
 [commit]: https://badgen.net/github/last-commit/saadeghi/theme-change?icon=github&color=purple
 [build]: https://badgen.net/github/checks/saadeghi/theme-change?label=build
-
 [build-url]: https://github.com/saadeghi/theme-change/actions
 [install-size-url]: https://bundlephobia.com/result?p=theme-change
 [js-url]: https://unpkg.com/theme-change@latest/index.js
