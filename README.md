@@ -11,6 +11,7 @@
 # 🖥 Demo  
 - See example code on [codepen](https://codepen.io/saadeghi/pen/OJypbNM)
 - See Sample site on [Netlify](https://css-theme-changer.netlify.app/)
+- See Vue Example on [Versel](https://vue-3-theme.vercel.app)
 
 [![image](https://user-images.githubusercontent.com/7342023/80218042-e3c67e00-8655-11ea-94e8-925d0dcbfd57.gif)](#)
 
@@ -43,12 +44,49 @@ Use CDN:
   Install: `npm i theme-change --save` and use it in your js file:  
   ```js
   import { useEffect } from 'react';
-  import {themeChange} from "theme-change"
+  import { themeChange } from "theme-change"
 
   useEffect(() => {
     themeChange(false)
     // 👆 false parameter is required for react project
   }, []);
+  ```
+
+</details>
+<details>
+<summary>
+  or if it's a Vue 3 project: 
+</summary>
+
+  Install: `npm i theme-change --save` and use it in your js file:  
+  ```js
+  import { onMounted, onUpdated, onUnmounted } from 'vue'
+  import { themeChange } from "theme-change"
+
+  export default {
+    setup(){
+      onMounted(() => {
+        themeChange(false);
+      });
+    }
+  }
+  ```
+
+</details>
+<details>
+<summary>
+  or if it's a Vue 2 project: 
+</summary>
+
+  Install: `npm i theme-change --save` and use it in your js file:  
+  ```js
+  import { themeChange } from "theme-change"
+
+  export default {
+    mounted: function () {
+      themeChange(false);
+    }
+  }
   ```
 
 </details>
