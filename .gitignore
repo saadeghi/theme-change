@@ -1,5 +1,4 @@
 node_modules
-index.js
-btn.js
-select.js
-toggle.js
+.DS_Store
+node_modules
+/dist/
