@@ -3,17 +3,30 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@1.19.0/dist/full.css" rel="stylesheet" type="text/css" />
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@1.20.0/dist/full.css" rel="stylesheet" type="text/css" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="./dist/index.js"></script>
 </head>
-<body>
-  <theme-toggle theme="dark,cmyk" class="m-10 inline-block">
+<body class="pt-20">
+
+  <theme-switch theme="cmyk,synthwave,cupcake" class="m-2 inline-block">
     <button class="btn btn-primary">default</button>
     <button slot="cmyk" class="btn btn-primary">cmyk</button>
     <button slot="dark" class="btn btn-primary">dark</button>
     <button slot="cupcake" class="btn btn-primary">cupcake</button>
     <button slot="synthwave" class="btn btn-primary">synthwave</button>
-  </theme-toggle>
+  </theme-switch>
+
+  <theme-button theme="synthwave" class="m-2 inline-block">
+    <button class="btn btn-primary">set synthwave</button>
+  </theme-button>
+  <theme-button theme="cupcake" class="m-2 inline-block">
+    <button class="btn btn-primary">set cupcake</button>
+  </theme-button>
+
+  <!-- <theme-checkbox theme="cmyk" class="m-2 toggle inline-block" visible="true" /> -->
+  <theme-checkbox theme="cmyk" class="m-2 toggle inline-block"></theme-checkbox>
+  <theme-checkbox theme="cmyk" class="m-2 toggle inline-block"></theme-checkbox>
+  <theme-checkbox theme="cmyk" class="m-2 toggle inline-block"></theme-checkbox>
 </body>
 </html>
