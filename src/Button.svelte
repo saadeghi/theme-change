@@ -11,6 +11,11 @@ onMount(() => {
 })
 </script>
 
+<style>
+:host {
+  display: inline-flex;
+}
+</style>
 
 <span on:click={setTheme(theme)}>
   <slot />

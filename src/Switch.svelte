@@ -18,6 +18,11 @@ onMount(() => {
 })
 </script>
 
+<style>
+:host {
+  display: inline-block;
+}
+</style>
 
 <span on:click={toggleTheme(theme)}>
   {#each themesArray as themeName}

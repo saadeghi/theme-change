@@ -14,6 +14,21 @@ export const loadThemeIfExists = () => {
   }
 }
 
+export const toggleBetweenTwoItems = (themesArray, checked) => {
+  if (themesArray.length == 1 && checked === false) {
+    setTheme(themesArray[0])
+  }
+  else if(themesArray.length == 1 && checked === true) {
+    removeTheme()
+  }
+  else if(themesArray.length == 2 && checked === false) {
+    setTheme(themesArray[1])
+  }
+  else if(themesArray.length == 2 && checked === true) {
+    setTheme(themesArray[0])
+  }
+}
+
 export const switchBetweenArrayItems = (themesArray) => {
   if (themesArray && themesArray.length >= 1) {
 

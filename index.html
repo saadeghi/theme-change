@@ -9,24 +9,33 @@
 </head>
 <body class="pt-20">
 
-  <theme-switch theme="cmyk,synthwave,cupcake" class="m-2 inline-block">
-    <button class="btn btn-primary">default</button>
-    <button slot="cmyk" class="btn btn-primary">cmyk</button>
-    <button slot="dark" class="btn btn-primary">dark</button>
-    <button slot="cupcake" class="btn btn-primary">cupcake</button>
-    <button slot="synthwave" class="btn btn-primary">synthwave</button>
+  <theme-switch theme="cmyk,synthwave,cupcake" class="m-2">
+    <button class="btn btn-primary btn-sm">default</button>
+    <button slot="cmyk" class="btn btn-primary btn-sm">cmyk</button>
+    <button slot="dark" class="btn btn-primary btn-sm">dark</button>
+    <button slot="cupcake" class="btn btn-primary btn-sm">cupcake</button>
+    <button slot="synthwave" class="btn btn-primary btn-sm">synthwave</button>
   </theme-switch>
 
-  <theme-button theme="synthwave" class="m-2 inline-block">
-    <button class="btn btn-primary">set synthwave</button>
+  <theme-button theme="synthwave" class="m-2">
+    <button class="btn btn-primary btn-sm">set synthwave</button>
   </theme-button>
-  <theme-button theme="cupcake" class="m-2 inline-block">
-    <button class="btn btn-primary">set cupcake</button>
+  <theme-button theme="cupcake" class="m-2">
+    <button class="btn btn-primary btn-sm">set cupcake</button>
   </theme-button>
 
-  <!-- <theme-checkbox theme="cmyk" class="m-2 toggle inline-block" visible="true" /> -->
-  <theme-checkbox theme="cmyk" class="m-2 toggle inline-block"></theme-checkbox>
-  <theme-checkbox theme="cmyk" class="m-2 toggle inline-block"></theme-checkbox>
-  <theme-checkbox theme="cmyk" class="m-2 toggle inline-block"></theme-checkbox>
+  <br/>
+
+  <theme-checkbox theme="cmyk" class="toggle" x-visible="true"></theme-checkbox>
+  <theme-checkbox theme="light,dark" class="toggle" x-visible="true"></theme-checkbox>
+  <theme-checkbox theme="dark" class="toggle" x-visible="true"></theme-checkbox>
+
+  <br/>
+
+  <theme-select 
+    x-visible=true
+    class="select select-bordered"
+    themes='{"cmyk": "CMYK", "dark": "Dark", "cupcake": "Cupcake", "synthwave": "Synthwave"}'
+  ></theme-select>
 </body>
 </html>
