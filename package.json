@@ -9,12 +9,13 @@
     "css"
   ],
   "main": "index.js",
-  "typings": "index.js",
+  "typings": "index.d.ts",
   "files": [
     "index.js",
     "toggle.js",
     "select.js",
-    "btn.js"
+    "btn.js",
+    "index.d.ts"
   ],
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
   },
   "homepage": "https://github.com/saadeghi/theme-change#readme",
   "devDependencies": {
+    "shx": "^0.3.4",
     "uglify-es": "^3.3.9"
   },
   "scripts": {
@@ -34,7 +36,8 @@
     "build:toggle": "uglifyjs src/toggle.js src/callToggle.js src/export.js -o toggle.js",
     "build:select": "uglifyjs src/select.js src/callSelect.js src/export.js -o select.js",
     "build:index": "uglifyjs src/toggle.js src/btn.js src/select.js src/callAll.js src/export.js -o index.js",
-    "build": "npm run build:btn && npm run build:toggle && npm run build:select && npm run build:index"
+    "copy:index.d.ts": "shx cp src/index.d.ts .",
+    "build": "npm run build:btn && npm run build:toggle && npm run build:select && npm run build:index && npm run copy:index.d.ts"
   },
   "dependencies": {}
 }
