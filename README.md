@@ -21,7 +21,7 @@
 
 Use CDN:
 
-```
+```html
 <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
 ```
 
@@ -64,7 +64,7 @@ useEffect(() => {
 Install: `npm i theme-change --save` and use it in your js file:
 
 ```js
-import { onMounted, onUpdated, onUnmounted } from 'vue'
+import { onMounted } from 'vue'
 import { themeChange } from 'theme-change'
 
 export default {
