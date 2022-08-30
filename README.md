@@ -58,7 +58,7 @@ useEffect(() => {
 </details>
 <details>
 <summary>
-  or if it's a Vue 3 project: 
+  or if it's a Vue 3 project (using composition API): 
 </summary>
 
 Install: `npm i theme-change --save` and use it in your js file:
@@ -79,7 +79,7 @@ export default {
 </details>
 <details>
 <summary>
-  or if it's a Vue 2 project: 
+  or if it's a Vue 2 project (using options API): 
 </summary>
 
 Install: `npm i theme-change --save` and use it in your js file:
