@@ -185,7 +185,7 @@ There are 3 options:
   Set theme based on OS color-scheme
 </summary>
 
-```
+```css
 @media (prefers-color-scheme: dark){
   :root{
     --my-color: #252b30;
