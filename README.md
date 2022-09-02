@@ -21,7 +21,7 @@
 
 Use CDN:
 
-```
+```html
 <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
 ```
 
@@ -58,13 +58,13 @@ useEffect(() => {
 </details>
 <details>
 <summary>
-  or if it's a Vue 3 project: 
+  or if it's a Vue 3 project (using composition API): 
 </summary>
 
 Install: `npm i theme-change --save` and use it in your js file:
 
 ```js
-import { onMounted, onUpdated, onUnmounted } from 'vue'
+import { onMounted } from 'vue'
 import { themeChange } from 'theme-change'
 
 export default {
@@ -79,7 +79,7 @@ export default {
 </details>
 <details>
 <summary>
-  or if it's a Vue 2 project: 
+  or if it's a Vue 2 project (using options API): 
 </summary>
 
 Install: `npm i theme-change --save` and use it in your js file:
@@ -185,7 +185,7 @@ There are 3 options:
   Set theme based on OS color-scheme
 </summary>
 
-```
+```css
 @media (prefers-color-scheme: dark){
   :root{
     --my-color: #252b30;
