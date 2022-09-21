@@ -113,6 +113,25 @@ onMount(() => {
 })
 ```
 
+
+</details>
+<details>
+<summary>
+  or if it's a SolidJS project: 
+</summary>
+
+Install: `npm i theme-change --save` and use it in your js/jsx/tsx file:
+
+```js
+import { onMount } from 'solid-js'
+import { themeChange } from 'theme-change'
+
+onMount(async () => {
+  themeChange();
+})
+```
+
+
 </details>
 
 ## CSS
