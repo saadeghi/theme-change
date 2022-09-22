@@ -113,7 +113,6 @@ onMount(() => {
 })
 ```
 
-
 </details>
 <details>
 <summary>
@@ -125,12 +124,110 @@ Install: `npm i theme-change --save` and use it in your js/jsx/tsx file:
 ```js
 import { onMount } from 'solid-js'
 import { themeChange } from 'theme-change'
-
 onMount(async () => {
   themeChange();
 })
 ```
 
+
+</details>
+<details>
+<summary>
+  or if it's a Astro project: 
+</summary>
+
+Install: `npm i theme-change --save` and use it in your .astro file(s):
+
+Astro is a bit tricky because of how is rendering html page as a MPA (Multiple Pages Application)
+Astro projects are therefore subject to [FART](https://css-tricks.com/flash-of-inaccurate-color-theme-fart/) problem. To prevent this we will use the [is:inline](https://docs.astro.build/en/reference/directives-reference/#isinline) astro directive.
+
+If you want to apply themes on a single [astro page](https://docs.astro.build/en/core-concepts/astro-pages/) (remember Astro is an MPA framework) :
+
+`src/pages/mypage.astro`
+
+```js
+---
+---
+
+<html lang="en">
+  <head>
+  <script is:inline>
+      // ☝️ This script prevent the FART effect.
+      if (localStorage.getItem("theme") === null) {
+        document.documentElement.setAttribute("data-theme", "light");
+      } else
+      document.documentElement.setAttribute("data-theme",localStorage.getItem("theme"));
+      // "theme" LocalStorage value is set by the package to remember user preference.
+      // The value is checked and applyed before rendering anything.
+  </script>
+  <script>
+      import { themeChange } from "theme-change";
+      themeChange();
+       // 👆 you could import the CDN directly instead of these two lines
+    </script>
+    <title>My crazy credit page</title>
+  </head>
+  <body>
+    <h1>Welcome to my credit page!</h1>
+  </body>
+</html>
+```
+
+If you want to apply themes to all your [astro pages](https://docs.astro.build/en/core-concepts/astro-pages/), you need to execute both scripts in a Astro [layout](https://docs.astro.build/en/core-concepts/layouts/#sample-layout), it would need to wrap all your astro pages like so:
+
+`src/layouts/MyCrazyLayout.astro`
+
+```html
+---
+---
+
+<html lang="en">
+  <head>
+    <script is:inline>
+      // ☝️ This script prevent the FART effect.
+      if (localStorage.getItem("theme") === null) {
+        document.documentElement.setAttribute("data-theme", "light");
+      } else
+        document.documentElement.setAttribute(
+          "data-theme",
+          localStorage.getItem("theme")
+        );
+      // "theme" LocalStorage value is set by the package to remember user preference.
+      // The value is checked and applyed before rendering anything.
+    </script>
+    <script>
+      import { themeChange } from 'theme-change';
+      themeChange();
+      // 👆 you could import the CDN directly instead of these two lines
+    </script>
+    <meta charset="utf-8" />
+    <title>My Cool Astro Layout Wraping All My Pages</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Posts</a>
+      <a href="#">Contact</a>
+    </nav>
+    <article>
+      <slot />
+      <!-- your content from src/pages/index.astro is injected here -->
+    </article>
+  </body>
+</html>
+```
+
+`src/pages/index.astro`
+
+```js
+---
+import MyCrazyLayout from '../layouts/MyCrazyLayout.astro';
+---
+<MySiteLayout>
+  <p>My page content, wrapped in a layout!</p>
+</MySiteLayout>
+```
 
 </details>
 
