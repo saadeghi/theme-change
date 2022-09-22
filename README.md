@@ -33,8 +33,8 @@ Use CDN:
 Install: `npm i theme-change --save` and use it in your js file:
 
 ```js
-import { themeChange } from "theme-change";
-themeChange();
+import { themeChange } from 'theme-change'
+themeChange()
 ```
 
 </details>
@@ -46,13 +46,13 @@ themeChange();
 Install: `npm i theme-change --save` and use it in your js file:
 
 ```js
-import { useEffect } from "react";
-import { themeChange } from "theme-change";
+import { useEffect } from 'react'
+import { themeChange } from 'theme-change'
 
 useEffect(() => {
-  themeChange(false);
+  themeChange(false)
   // 👆 false parameter is required for react project
-}, []);
+}, [])
 ```
 
 </details>
@@ -64,16 +64,16 @@ useEffect(() => {
 Install: `npm i theme-change --save` and use it in your js file:
 
 ```js
-import { onMounted } from "vue";
-import { themeChange } from "theme-change";
+import { onMounted } from 'vue'
+import { themeChange } from 'theme-change'
 
 export default {
   setup() {
     onMounted(() => {
-      themeChange(false);
-    });
+      themeChange(false)
+    })
   },
-};
+}
 ```
 
 </details>
@@ -85,13 +85,13 @@ export default {
 Install: `npm i theme-change --save` and use it in your js file:
 
 ```js
-import { themeChange } from "theme-change";
+import { themeChange } from 'theme-change'
 
 export default {
   mounted: function () {
-    themeChange(false);
+    themeChange(false)
   },
-};
+}
 ```
 
 </details>
@@ -103,31 +103,14 @@ export default {
 Install: `npm i theme-change --save` and use it in your svelte component that uses one theme-change attributes:
 
 ```js
-import { onMount } from "svelte";
-import { themeChange } from "theme-change";
+import { onMount } from 'svelte'
+import { themeChange } from 'theme-change'
 
 // NOTE: the element that is using one of the theme attributes must be in the DOM on mount
 onMount(() => {
-  themeChange(false);
+  themeChange(false)
   // 👆 false parameter is required for svelte
-});
-```
-
-</details>
-<details>
-<summary>
-  or if it's a SolidJS project: 
-</summary>
-
-Install: `npm i theme-change --save` and use it in your js/jsx/tsx file:
-
-```js
-import { onMount } from "solid-js";
-import { themeChange } from "theme-change";
-
-onMount(async () => {
-  themeChange();
-});
+})
 ```
 
 </details>
@@ -196,7 +179,7 @@ If you want to apply themes to all your [astro pages](https://docs.astro.build/e
       // The value is checked and applyed before rendering anything.
     </script>
     <script>
-      import { themeChange } from "theme-change";
+      import { themeChange } from 'theme-change';
       themeChange();
       // 👆 you could import the CDN directly instead of these two lines
     </script>
@@ -240,10 +223,10 @@ Set your themeable style as custom properties in CSS like this:
   --my-color: #fff;
   /* or any other variables/style */
 }
-[data-theme="dark"] {
+[data-theme='dark'] {
   --my-color: #000;
 }
-[data-theme="pink"] {
+[data-theme='pink'] {
   --my-color: #ffabc8;
 }
 ```
@@ -302,8 +285,8 @@ There are 3 options:
 </summary>
 
 ```css
-@media (prefers-color-scheme: dark) {
-  :root {
+@media (prefers-color-scheme: dark){
+  :root{
     --my-color: #252b30;
   }
 }
@@ -327,7 +310,7 @@ If you're using [Purge CSS](https://purgecss.com/), you might need to [safe list
         safelist: [/data-theme$/],
       },
     },
-  };
+  }
   ```
 
 - Safelist inside CSS file
@@ -335,7 +318,7 @@ If you're using [Purge CSS](https://purgecss.com/), you might need to [safe list
   ```css
   /*! purgecss start ignore */
 
-  [data-theme="dark"] {
+  [data-theme='dark'] {
     --my-color: #252b30;
   }
 
