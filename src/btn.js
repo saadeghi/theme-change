@@ -29,8 +29,8 @@ function themeBtn() {
       [...document.querySelectorAll("[data-set-theme]")].forEach((el) => {
         el.classList.remove(el.getAttribute('data-act-class'));
       });
-      if (this.getAttribute('data-act-class')) {
-        this.classList.add(this.getAttribute('data-act-class'))
+      if (el.getAttribute('data-act-class')) {
+        el.classList.add(el.getAttribute('data-act-class'));
       }
     });
   });
