@@ -1,7 +1,9 @@
 function themeBtn() {
-  (function (theme = localStorage.getItem("theme")) {
+  var btnEl = document.querySelector("[data-set-theme='']")
+  var dataKey = btnEl.getAttribute('data-key');
+  (function (theme = localStorage.getItem(dataKey ? dataKey : "theme")) {
     if (theme != undefined && theme != '') {
-      if (localStorage.getItem("theme") && localStorage.getItem("theme") != '') {
+      if (localStorage.getItem(dataKey ? dataKey : "theme") && localStorage.getItem(dataKey ? dataKey : "theme") != '') {
         document.documentElement.setAttribute("data-theme", theme);
         var btnEl = document.querySelector("[data-set-theme='" + theme.toString() + "']")
         if (btnEl) {
@@ -23,12 +25,12 @@ function themeBtn() {
   [...document.querySelectorAll("[data-set-theme]")].forEach((el) => {
     el.addEventListener("click", function () {
       document.documentElement.setAttribute("data-theme", this.getAttribute('data-set-theme'));
-      localStorage.setItem("theme", document.documentElement.getAttribute('data-theme'));
+      localStorage.setItem(dataKey ? dataKey : "theme", document.documentElement.getAttribute('data-theme'));
       [...document.querySelectorAll("[data-set-theme]")].forEach((el) => {
         el.classList.remove(el.getAttribute('data-act-class'));
       });
-      if (el.getAttribute('data-act-class')) {
-        el.classList.add(el.getAttribute('data-act-class'));
+      if (this.getAttribute('data-act-class')) {
+        this.classList.add(this.getAttribute('data-act-class'))
       }
     });
   });

@@ -344,6 +344,23 @@ If you're using [Purge CSS](https://purgecss.com/), you might need to [safe list
 
 </details>
 
+<details>
+<summary>
+  Using custom localStorage key
+</summary>
+
+If you want to use a custom localStorage key, you can add it to the `data-key` attribute like this:
+
+```html
+<select data-choose-theme data-key="admin-panel">
+
+<button data-key="front-page" data-set-theme="">
+
+<span data-key="premium-user-theme" data-toggle-theme="dark">
+```
+
+</details>
+
 ---
 
 [install-size]: https://badgen.net/bundlephobia/minzip/theme-change?label=bundle%20size&color=purple

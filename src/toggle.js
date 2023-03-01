@@ -1,7 +1,8 @@
 function themeToggle() {
   var toggleEl = document.querySelector("[data-toggle-theme]");
-  (function (theme = localStorage.getItem("theme")) {
-    if (localStorage.getItem("theme")) {
+  var dataKey = toggleEl.getAttribute('data-key');
+  (function (theme = localStorage.getItem(dataKey ? dataKey : "theme")) {
+    if (localStorage.getItem(dataKey ? dataKey : "theme")) {
       document.documentElement.setAttribute("data-theme", theme);
       if (toggleEl) {
         [...document.querySelectorAll("[data-toggle-theme]")].forEach((el) => {
@@ -19,14 +20,14 @@ function themeToggle() {
           if (document.documentElement.getAttribute('data-theme') == themesArray[0]) {
             if (themesArray.length == 1) {
               document.documentElement.removeAttribute("data-theme");
-              localStorage.removeItem("theme");
+              localStorage.removeItem(dataKey ? dataKey : "theme");
             }else{
               document.documentElement.setAttribute("data-theme", themesArray[1]);
-              localStorage.setItem("theme", themesArray[1]);
+              localStorage.setItem(dataKey ? dataKey : "theme", themesArray[1]);
             }
           } else {
             document.documentElement.setAttribute("data-theme", themesArray[0]);
-            localStorage.setItem("theme", themesArray[0]);
+            localStorage.setItem(dataKey ? dataKey : "theme", themesArray[0]);
           }
         }
         [...document.querySelectorAll("[data-toggle-theme]")].forEach((el) => {
