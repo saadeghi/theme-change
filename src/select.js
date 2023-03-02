@@ -1,6 +1,6 @@
 function themeSelect() {
   var selectEl = document.querySelector("select[data-choose-theme]");
-  var dataKey = selectEl.getAttribute('data-key');
+  var dataKey = selectEl ? selectEl.getAttribute('data-key') : null;
   (function (theme = localStorage.getItem(dataKey ? dataKey : "theme")) {
     if (localStorage.getItem(dataKey ? dataKey : "theme")) {
       document.documentElement.setAttribute("data-theme", theme);

@@ -1,6 +1,6 @@
 function themeToggle() {
   var toggleEl = document.querySelector("[data-toggle-theme]");
-  var dataKey = toggleEl.getAttribute('data-key');
+  var dataKey = toggleEl ? toggleEl.getAttribute('data-key') : null;
   (function (theme = localStorage.getItem(dataKey ? dataKey : "theme")) {
     if (localStorage.getItem(dataKey ? dataKey : "theme")) {
       document.documentElement.setAttribute("data-theme", theme);

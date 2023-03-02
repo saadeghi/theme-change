@@ -1,6 +1,6 @@
 function themeBtn() {
   var btnEl = document.querySelector("[data-set-theme='']")
-  var dataKey = btnEl.getAttribute('data-key');
+  var dataKey = btnEl ? btnEl.getAttribute('data-key') : null;
   (function (theme = localStorage.getItem(dataKey ? dataKey : "theme")) {
     if (theme != undefined && theme != '') {
       if (localStorage.getItem(dataKey ? dataKey : "theme") && localStorage.getItem(dataKey ? dataKey : "theme") != '') {
