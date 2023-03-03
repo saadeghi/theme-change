@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.5.0](https://github.com/saadeghi/theme-change/compare/v2.4.0...v2.5.0) (2023-03-03)
+
 ## [2.4.0](https://github.com/saadeghi/theme-change/compare/v1.2.0...v2.4.0) (2023-03-02)
 
 
