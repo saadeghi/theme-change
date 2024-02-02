@@ -3,6 +3,9 @@ function themeChange(attach = true) {
     document.addEventListener("livewire:navigated", function (event) {
       themeSelect()
     })
+    document.addEventListener("DOMContentLoaded", function (event) {
+      themeSelect()
+    })
   }else{
     themeSelect()
   }
