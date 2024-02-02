@@ -1,10 +1,14 @@
 function themeChange(attach = true) {
   if (attach === true) {
-    document.addEventListener("DOMContentLoaded", function (event) {
-      themeToggle()
-      themeSelect()
-      themeBtn()
-    })
+    document.addEventListener("livewire:navigated", toggleAll)
+			
+    document.addEventListener("DOMContentLoaded", toggleAll)
+    
+    function toggleAll (event) {
+        themeToggle();
+        themeSelect();
+        themeBtn()
+    }
   }else{
     themeToggle()
     themeSelect()
