@@ -52,6 +52,9 @@ import { themeChange } from 'theme-change'
 useEffect(() => {
   themeChange(false)
   // 👆 false parameter is required for react project
+  return () => {
+    themeChange(false)
+  }
 }, [])
 ```
 
