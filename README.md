@@ -64,16 +64,14 @@ useEffect(() => {
 Install: `npm i theme-change --save` and use it in your js file:
 
 ```js
-import { onMounted } from 'vue'
-import { themeChange } from 'theme-change'
+<script setup>
+import { onMounted } from 'vue';
+import { themeChange } from 'theme-change';
 
-export default {
-  setup() {
-    onMounted(() => {
-      themeChange(false)
-    })
-  },
-}
+onMounted(() => {
+    themeChange()
+})
+</script>
 ```
 
 </details>
