@@ -1,39 +1,49 @@
-function themeToggle() {
-  var toggleEl = document.querySelector("[data-toggle-theme]");
-  var dataKey = toggleEl ? toggleEl.getAttribute('data-key') : null;
-  (function (theme = localStorage.getItem(dataKey ? dataKey : "theme")) {
-    if (localStorage.getItem(dataKey ? dataKey : "theme")) {
-      document.documentElement.setAttribute("data-theme", theme);
-      if (toggleEl) {
-        [...document.querySelectorAll("[data-toggle-theme]")].forEach((el) => {
-          el.classList.add(toggleEl.getAttribute('data-act-class'))
-        });
-      }
+import {
+  storageKey,
+  loadTheme,
+  setThemeAndSync,
+  syncSetThemeElements,
+} from "./core.js";
+import { parseThemeList, nextThemeFromList } from "./themeLogic.js";
+
+const toggleThemeBound = new WeakSet();
+
+export function themeToggle() {
+  const els = [...document.querySelectorAll("[data-toggle-theme]")];
+  if (!els.length) return;
+
+  const keys = [...new Set(els.map((el) => storageKey(el)))];
+
+  keys.forEach((key) => {
+    const group = els.filter((el) => storageKey(el) === key);
+    const saved = loadTheme(key);
+    if (saved) {
+      document.documentElement.setAttribute("data-theme", saved);
+      group.forEach((el) => {
+        const actClass = el.getAttribute("data-act-class");
+        if (actClass) el.classList.add(actClass);
+      });
     }
-  })();
-  if (toggleEl) {
-    [...document.querySelectorAll("[data-toggle-theme]")].forEach((el) => {
+    syncSetThemeElements(saved, key);
+
+    group.forEach((el) => {
+      if (toggleThemeBound.has(el)) return;
+      toggleThemeBound.add(el);
       el.addEventListener("click", function () {
-        var themesList = el.getAttribute('data-toggle-theme');
-        if (themesList) {
-          var themesArray = themesList.split(",");
-          if (document.documentElement.getAttribute('data-theme') == themesArray[0]) {
-            if (themesArray.length == 1) {
-              document.documentElement.removeAttribute("data-theme");
-              localStorage.removeItem(dataKey ? dataKey : "theme");
-            }else{
-              document.documentElement.setAttribute("data-theme", themesArray[1]);
-              localStorage.setItem(dataKey ? dataKey : "theme", themesArray[1]);
-            }
-          } else {
-            document.documentElement.setAttribute("data-theme", themesArray[0]);
-            localStorage.setItem(dataKey ? dataKey : "theme", themesArray[0]);
-          }
-        }
-        [...document.querySelectorAll("[data-toggle-theme]")].forEach((el) => {
-          el.classList.toggle(this.getAttribute('data-act-class'));
-        });
+        const themes = parseThemeList(this.getAttribute("data-toggle-theme"));
+        const current = document.documentElement.getAttribute("data-theme");
+        const next = nextThemeFromList(themes, current);
+
+        setThemeAndSync(next, key);
+        const actClass = this.getAttribute("data-act-class");
+        if (actClass) group.forEach((e) => e.classList.toggle(actClass));
       });
     });
-  }
+  });
+}
+
+export function themeChange(attach = true) {
+  attach
+    ? document.addEventListener("DOMContentLoaded", themeToggle)
+    : themeToggle();
 }

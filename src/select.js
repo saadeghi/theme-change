@@ -1,47 +1,53 @@
-function themeSelect() {
-  var selectEl = document.querySelector("select[data-choose-theme]");
-  var dataKey = selectEl ? selectEl.getAttribute("data-key") : null;
-  (function (theme = localStorage.getItem(dataKey ? dataKey : "theme")) {
-    if (localStorage.getItem(dataKey ? dataKey : "theme")) {
-      document.documentElement.setAttribute("data-theme", theme);
-      var optionToggler = document.querySelector(
-        "select[data-choose-theme] [value='" + theme.toString() + "']",
-      );
-      if (optionToggler) {
-        [
-          ...document.querySelectorAll(
-            "select[data-choose-theme] [value='" + theme.toString() + "']",
-          ),
-        ].forEach((el) => {
-          el.selected = true;
-        });
-      }
+import {
+  storageKey,
+  loadTheme,
+  setThemeAndSync,
+  syncSetThemeElements,
+} from "./core.js";
+import { normalizeTheme } from "./themeLogic.js";
+
+const chooseThemeBound = new WeakSet();
+
+export function themeSelect() {
+  const els = [...document.querySelectorAll("select[data-choose-theme]")];
+  if (!els.length) return;
+
+  const keys = [...new Set(els.map((el) => storageKey(el)))];
+
+  keys.forEach((key) => {
+    const group = els.filter((el) => storageKey(el) === key);
+    const saved = loadTheme(key);
+    if (saved) {
+      document.documentElement.setAttribute("data-theme", saved);
+      group.forEach((select) => {
+        const opt = select.querySelector(`[value="${saved}"]`);
+        if (opt) {
+          select.value = saved;
+        }
+      });
     }
-  })();
-  if (selectEl) {
-    [...document.querySelectorAll("select[data-choose-theme]")].forEach(
-      (el) => {
-        el.addEventListener("change", function () {
-          var selectedTheme = this.value;
-          if (selectedTheme === "") {
-            document.documentElement.removeAttribute("data-theme");
-            localStorage.removeItem(dataKey ? dataKey : "theme");
-          } else {
-            document.documentElement.setAttribute("data-theme", selectedTheme);
-            localStorage.setItem(dataKey ? dataKey : "theme", selectedTheme);
+    syncSetThemeElements(saved, key);
+
+    group.forEach((el) => {
+      if (chooseThemeBound.has(el)) return;
+      chooseThemeBound.add(el);
+      el.addEventListener("change", function () {
+        const theme = normalizeTheme(this.value);
+        setThemeAndSync(theme, key);
+        group.forEach((select) => {
+          const v = theme || "";
+          const opt = select.querySelector(`[value="${v}"]`);
+          if (opt) {
+            select.value = v;
           }
-          [...document.querySelectorAll("select[data-choose-theme]")].forEach(
-            (select) => {
-              var selectedOption = select.querySelector(
-                "[value='" + selectedTheme + "']",
-              );
-              if (selectedOption) {
-                selectedOption.selected = true;
-              }
-            },
-          );
         });
-      },
-    );
-  }
+      });
+    });
+  });
+}
+
+export function themeChange(attach = true) {
+  attach
+    ? document.addEventListener("DOMContentLoaded", themeSelect)
+    : themeSelect();
 }

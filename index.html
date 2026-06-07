@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5/theme/valentine.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="p-4 flex flex-col items-start gap-2">
+    <h2 class="py-6">Using data-set-theme attribute works everywhere</h2>
+    <div>
+      <button class="btn" data-set-theme="">Default</button>
+      <button class="btn" data-set-theme="dark" data-act-class="btn-active">
+        Dark
+      </button>
+      <button
+        class="btn"
+        data-set-theme="valentine"
+        data-act-class="btn-active"
+      >
+        Valentine
+      </button>
+    </div>
+    <button class="btn" data-set-theme="dark,light,valentine">
+      Rotate dark/light/valentine
+    </button>
+
+    <select class="select" data-set-theme>
+      <option value="">Default</option>
+      <option value="dark">Dark</option>
+      <option value="light">Light</option>
+      <option value="valentine">Valentine</option>
+    </select>
+
+    <input type="checkbox" value="dark" data-set-theme class="toggle" />
+
+    <h2 class="py-6">daisyUI theme-controller</h2>
+    <label class="toggle text-base-content">
+      <input
+        type="checkbox"
+        value="dark"
+        class="theme-controller"
+        data-set-theme
+      />
+      <svg
+        aria-label="sun"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+      >
+        <g
+          stroke-linejoin="round"
+          stroke-linecap="round"
+          stroke-width="2"
+          fill="none"
+          stroke="currentColor"
+        >
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2"></path>
+          <path d="M12 20v2"></path>
+          <path d="m4.93 4.93 1.41 1.41"></path>
+          <path d="m17.66 17.66 1.41 1.41"></path>
+          <path d="M2 12h2"></path>
+          <path d="M20 12h2"></path>
+          <path d="m6.34 17.66-1.41 1.41"></path>
+          <path d="m19.07 4.93-1.41 1.41"></path>
+        </g>
+      </svg>
+      <svg
+        aria-label="moon"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+      >
+        <g
+          stroke-linejoin="round"
+          stroke-linecap="round"
+          stroke-width="2"
+          fill="none"
+          stroke="currentColor"
+        >
+          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+        </g>
+      </svg>
+    </label>
+
+    <h2 class="py-6">v2 legacy attributes backward compatibility</h2>
+
+    <button class="btn" data-toggle-theme="dark,light">
+      Legacy toggle dark/light
+    </button>
+    <button
+      class="btn"
+      data-toggle-theme="dark,light,valentine"
+      data-act-class="btn-active"
+    >
+      Legacy toggle with act class
+    </button>
+    <button class="btn" data-toggle-theme="dark,light" data-key="legacy-toggle">
+      Legacy toggle with key
+    </button>
+
+    <select class="select" data-choose-theme>
+      <option value="">Legacy default</option>
+      <option value="dark">Legacy dark</option>
+      <option value="light">Legacy light</option>
+      <option value="valentine">Legacy valentine</option>
+    </select>
+    <select class="select" data-choose-theme data-key="legacy-select">
+      <option value="">Legacy key default</option>
+      <option value="dark">Legacy key dark</option>
+      <option value="light">Legacy key light</option>
+      <option value="valentine">Legacy key valentine</option>
+    </select>
+
+    <script type="module">
+      import { themeChange } from "./index.js";
+      themeChange(false);
+    </script>
+  </body>
+</html>
