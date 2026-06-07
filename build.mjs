@@ -1,5 +1,9 @@
 import { build } from "esbuild";
 import { copyFileSync } from "fs";
+import { dirname, resolve } from "path";
+import { fileURLToPath } from "url";
+
+const rootDir = dirname(fileURLToPath(import.meta.url));
 
 const entries = [
   { entry: "src/index.js", base: "index", globalName: "__tc" },
@@ -11,6 +15,7 @@ const entries = [
 await Promise.all(
   entries.flatMap(({ entry, base, globalName }) => [
     build({
+      absWorkingDir: rootDir,
       entryPoints: [entry],
       bundle: true,
       format: "esm",
@@ -19,6 +24,7 @@ await Promise.all(
       target: ["es2020"],
     }),
     build({
+      absWorkingDir: rootDir,
       entryPoints: [entry],
       bundle: true,
       format: "iife",
@@ -36,6 +42,9 @@ await Promise.all(
   ]),
 );
 
-copyFileSync("src/index.d.ts", "index.d.ts");
+copyFileSync(
+  resolve(rootDir, "src/index.d.ts"),
+  resolve(rootDir, "index.d.ts"),
+);
 
 console.log("Build complete");
