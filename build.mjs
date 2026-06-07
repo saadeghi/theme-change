@@ -15,22 +15,20 @@ const entries = [
 await Promise.all(
   entries.flatMap(({ entry, base, globalName }) => [
     build({
-      absWorkingDir: rootDir,
-      entryPoints: [entry],
+      entryPoints: [resolve(rootDir, entry)],
       bundle: true,
       format: "esm",
       minify: true,
-      outfile: `${base}.mjs`,
+      outfile: resolve(rootDir, `${base}.mjs`),
       target: ["es2020"],
     }),
     build({
-      absWorkingDir: rootDir,
-      entryPoints: [entry],
+      entryPoints: [resolve(rootDir, entry)],
       bundle: true,
       format: "iife",
       globalName,
       minify: true,
-      outfile: `${base}.js`,
+      outfile: resolve(rootDir, `${base}.js`),
       target: ["es2020"],
       footer:
         base === "index"
