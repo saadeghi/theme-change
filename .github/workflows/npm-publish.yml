@@ -11,14 +11,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: Setup Node.js environment
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org
       - id: check
-        uses: EndBug/version-check@v1
+        uses: EndBug/version-check@v3
         with:
           file-url: https://unpkg.com/theme-change@latest/package.json
           static-checking: localIsNew
