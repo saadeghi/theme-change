@@ -1,6 +1,6 @@
 {
   "name": "theme-change",
-  "version": "3.0.0",
+  "version": "3.0.2",
   "description": "Change CSS theme with toggle, buttons or select using CSS Variables and localStorage",
   "keywords": [
     "javascript",
@@ -10,17 +10,21 @@
   ],
   "type": "module",
   "exports": {
-    ".": "./index.js",
-    "./btn": "./btn.js",
-    "./select": "./select.js",
-    "./toggle": "./toggle.js"
+    ".": "./index.mjs",
+    "./btn": "./btn.mjs",
+    "./select": "./select.mjs",
+    "./toggle": "./toggle.mjs"
   },
   "types": "index.d.ts",
   "files": [
     "index.js",
+    "index.mjs",
     "toggle.js",
+    "toggle.mjs",
     "select.js",
+    "select.mjs",
     "btn.js",
+    "btn.mjs",
     "index.d.ts"
   ],
   "repository": {

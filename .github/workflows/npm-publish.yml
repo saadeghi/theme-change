@@ -11,17 +11,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2.3.4
+        uses: actions/checkout@v4
       - name: Setup Node.js environment
-        uses: actions/setup-node@v2.1.2
+        uses: actions/setup-node@v4
         with:
-            node-version: 12
-            registry-url: https://registry.npmjs.org
+          node-version: 20
+          registry-url: https://registry.npmjs.org
       - id: check
         uses: EndBug/version-check@v1
         with:
-            file-url: https://unpkg.com/theme-change@latest/package.json
-            static-checking: localIsNew
+          file-url: https://unpkg.com/theme-change@latest/package.json
+          static-checking: localIsNew
       - run: npm install
       - name: mkdir
         run: mkdir dist
@@ -31,4 +31,4 @@ jobs:
         run: npm publish
         if: steps.check.outputs.changed == 'true'
         env:
-            NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
