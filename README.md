@@ -11,7 +11,7 @@ Tiny helper for CSS themes.
 
 ## Demo
 
-- CodePen: https://codepen.io/saadeghi/pen/OJypbNM
+- CodePen: https://codepen.io/saadeghi/pen/OJypbNM?editors=1000
 
 [![image](https://user-images.githubusercontent.com/7342023/80218042-e3c67e00-8655-11ea-94e8-925d0dcbfd57.gif)](#)
 
@@ -26,7 +26,7 @@ Tiny helper for CSS themes.
 ### NPM
 
 ```bash
-npm i theme-change --save
+npm i theme-change@latest
 ```
 
 ```js
