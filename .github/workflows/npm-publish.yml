@@ -15,23 +15,22 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v6
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
         with:
-          node-version: 20
-          registry-url: https://registry.npmjs.org
+          bun-version: latest
       - id: check
         uses: EndBug/version-check@v3
         with:
           file-url: https://unpkg.com/theme-change@latest/package.json
           static-checking: localIsNew
-      - run: npm install
+      - run: bun install
       - name: mkdir
         run: mkdir -p dist
       - name: build
-        run: npm run build
+        run: bun build.mjs
       - name: publish
-        run: npm publish
+        run: bun publish
         if: steps.check.outputs.changed == 'true'
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          NPM_CONFIG_TOKEN: ${{secrets.NPM_TOKEN}}
