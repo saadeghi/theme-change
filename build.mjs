@@ -40,9 +40,12 @@ await Promise.all(
   ]),
 );
 
-copyFileSync(
-  resolve(rootDir, "src/index.d.ts"),
-  resolve(rootDir, "index.d.ts"),
-);
+const declarations = ["index", "btn", "select", "toggle"];
+for (const name of declarations) {
+  copyFileSync(
+    resolve(rootDir, `src/${name}.d.ts`),
+    resolve(rootDir, `${name}.d.ts`),
+  );
+}
 
 console.log("Build complete");
