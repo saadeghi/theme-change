@@ -10,10 +10,22 @@
   ],
   "type": "module",
   "exports": {
-    ".": "./index.mjs",
-    "./btn": "./btn.mjs",
-    "./select": "./select.mjs",
-    "./toggle": "./toggle.mjs"
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./index.mjs"
+    },
+    "./btn": {
+      "types": "./btn.d.ts",
+      "default": "./btn.mjs"
+    },
+    "./select": {
+      "types": "./select.d.ts",
+      "default": "./select.mjs"
+    },
+    "./toggle": {
+      "types": "./toggle.d.ts",
+      "default": "./toggle.mjs"
+    }
   },
   "types": "index.d.ts",
   "files": [
@@ -25,7 +37,10 @@
     "select.mjs",
     "btn.js",
     "btn.mjs",
-    "index.d.ts"
+    "index.d.ts",
+    "btn.d.ts",
+    "select.d.ts",
+    "toggle.d.ts"
   ],
   "repository": {
     "type": "git",
