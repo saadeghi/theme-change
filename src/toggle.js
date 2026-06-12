@@ -3,6 +3,7 @@ import {
   loadTheme,
   setThemeAndSync,
   syncSetThemeElements,
+  setActiveAttr,
 } from "./core.js";
 import { parseThemeList, nextThemeFromList } from "./themeLogic.js";
 
@@ -20,8 +21,11 @@ export function themeToggle() {
     if (saved) {
       document.documentElement.setAttribute("data-theme", saved);
       group.forEach((el) => {
+        const isActive =
+          parseThemeList(el.getAttribute("data-toggle-theme"))[0] === saved;
         const actClass = el.getAttribute("data-act-class");
-        if (actClass) el.classList.add(actClass);
+        if (actClass) el.classList.toggle(actClass, isActive);
+        setActiveAttr(el, isActive);
       });
     }
     syncSetThemeElements(saved, key);
@@ -35,8 +39,13 @@ export function themeToggle() {
         const next = nextThemeFromList(themes, current);
 
         setThemeAndSync(next, key);
-        const actClass = this.getAttribute("data-act-class");
-        if (actClass) group.forEach((e) => e.classList.toggle(actClass));
+        group.forEach((e) => {
+          const isActive =
+            parseThemeList(e.getAttribute("data-toggle-theme"))[0] === next;
+          const actClass = e.getAttribute("data-act-class");
+          if (actClass) e.classList.toggle(actClass, isActive);
+          setActiveAttr(e, isActive);
+        });
       });
     });
   });

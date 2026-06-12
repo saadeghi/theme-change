@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [Unreleased]
+
+### Features
+
+* added `data-act-attribute="name[:value]"` to set an arbitrary HTML attribute (e.g. `aria-pressed`, `aria-current`) on a button while its theme is active, as a more flexible alternative to `data-act-class` ([#41](https://github.com/saadeghi/theme-change/issues/41))
+* `data-act-attribute` also works with legacy `data-toggle-theme` buttons
+
+### Bug Fixes
+
+* legacy `data-toggle-theme` now recomputes each button's active state on click instead of blindly toggling `data-act-class`, fixing act-class desync with multi-theme toggle lists
+
 ## [3.0.1] (2026-06-07)
 
 ### Features

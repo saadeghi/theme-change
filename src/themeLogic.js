@@ -34,3 +34,12 @@ export function isSetElementActive(setValue, theme) {
   if (list.length > 1) return list.includes(theme);
   return setValue === theme;
 }
+
+export function parseActAttr(raw) {
+  const value = (raw || "").trim();
+  if (!value) return null;
+  const i = value.indexOf(":");
+  const name = (i === -1 ? value : value.slice(0, i)).trim();
+  if (!name) return null;
+  return { name, value: i === -1 ? "" : value.slice(i + 1) };
+}

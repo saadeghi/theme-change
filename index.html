@@ -19,13 +19,19 @@
     <h2 class="py-6">Using data-set-theme attribute works everywhere</h2>
     <div>
       <button class="btn" data-set-theme="">Default</button>
-      <button class="btn" data-set-theme="dark" data-act-class="btn-active">
+      <button
+        class="btn"
+        data-set-theme="dark"
+        data-act-class="btn-active"
+        data-act-attribute="aria-pressed:true"
+      >
         Dark
       </button>
       <button
         class="btn"
         data-set-theme="valentine"
         data-act-class="btn-active"
+        data-act-attribute="aria-current"
       >
         Valentine
       </button>
@@ -36,7 +42,12 @@
       >
         Caramellatte
       </button>
-      <button class="btn" data-set-theme="abyss" data-act-class="btn-active">
+      <button
+        class="btn"
+        data-set-theme="abyss"
+        data-act-class="btn-active"
+        data-act-attribute="title:Active: abyss theme"
+      >
         Abyss
       </button>
     </div>
@@ -110,6 +121,7 @@
       class="btn"
       data-toggle-theme="dark,light,valentine"
       data-act-class="btn-active"
+      data-act-attribute="aria-pressed:true"
     >
       Legacy toggle with act class
     </button>
