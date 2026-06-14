@@ -3,6 +3,7 @@ import {
   normalizeTheme,
   themeFromSetValue,
   isSetElementActive,
+  parseActAttr,
 } from "./themeLogic.js";
 
 export const DEFAULT_KEY = keyFromAttr("");
@@ -53,6 +54,16 @@ function setActiveClass(el, active) {
   }
 }
 
+export function setActiveAttr(el, active) {
+  const spec = parseActAttr(el.getAttribute("data-act-attribute"));
+  if (!spec) return;
+  if (active) {
+    el.setAttribute(spec.name, spec.value);
+  } else {
+    el.removeAttribute(spec.name);
+  }
+}
+
 export function syncSetThemeElements(theme, key) {
   const els = getSetThemeElements(key);
 
@@ -74,6 +85,7 @@ export function syncSetThemeElements(theme, key) {
     const value = el.getAttribute("data-set-theme") || "";
     const active = isSetElementActive(value, theme);
     setActiveClass(el, active);
+    setActiveAttr(el, active);
   });
 }
 

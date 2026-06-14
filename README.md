@@ -144,6 +144,26 @@ Notes:
 <button data-set-theme="pink" data-act-class="ACTIVE"></button>
 ```
 
+### `data-act-attribute`
+
+Like `data-act-class`, but sets an arbitrary HTML attribute (instead of a class) on a button while its theme is active, and removes it when inactive. Useful for accessibility state such as `aria-pressed` or `aria-current`.
+
+```html
+<!-- name:value — active: aria-pressed="true", inactive: attribute removed -->
+<button data-set-theme="dark" data-act-attribute="aria-pressed:true"></button>
+
+<!-- bare name (no colon) — boolean presence: active: aria-current="", inactive: removed -->
+<button data-set-theme="pink" data-act-attribute="aria-current"></button>
+```
+
+Notes:
+
+- Syntax is `name[:value]`. Only the **first** colon splits name and value, so the value may itself contain colons (e.g. `data-act-attribute="title:Active: dark"`).
+- When inactive the attribute is fully removed (not set to a falsy value).
+- Button-only, same as `data-act-class` — ignored on `<select>` and checkbox controls.
+- Can be combined with `data-act-class` on the same element.
+- Also works with the legacy `data-toggle-theme` buttons.
+
 ### `data-key`
 
 ```html
