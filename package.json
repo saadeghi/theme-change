@@ -53,7 +53,7 @@
   },
   "homepage": "https://github.com/saadeghi/theme-change#readme",
   "devDependencies": {
-    "esbuild": "^0.25.0"
+    "esbuild": "^0.28.1"
   },
   "scripts": {
     "build": "node build.mjs"
